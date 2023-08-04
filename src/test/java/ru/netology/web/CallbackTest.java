@@ -12,7 +12,7 @@ public class CallbackTest {
 
     @Test
     public void shouldTestSubmitForm() throws InterruptedException {
-        //Configuration.headless = true;
+        Configuration.headless = true;
         open("http://localhost:9999");
         $(By.cssSelector("[data-test-id=name] input")).setValue("Василий Петров");
         $(By.cssSelector("[data-test-id=phone] input")).setValue("+79876543210");
@@ -21,6 +21,6 @@ public class CallbackTest {
         String gotText = $(By.cssSelector("[data-test-id=order-success]")).getText().trim();
         Assertions.assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", gotText);
 
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
     }
 }
